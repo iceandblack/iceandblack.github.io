@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("fanCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -80,3 +79,15 @@ function showNextSlide() {
 }
 
 setInterval(showNextSlide, 3000);
+
+
+const slides2 = document.querySelectorAll(".slide2");
+let current2 = 0;
+
+function showNextSlide2() {
+    slides2[current2].classList.remove("active2");
+    current2 = (current2 + 1) % slides2.length;
+    slides2[current2].classList.add("active2");
+}
+
+setInterval(showNextSlide2, 5000);
