@@ -147,8 +147,10 @@ img {
 .skills {
     padding: 60px 8vw;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skills h2 {
@@ -161,31 +163,7 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
     padding: 24px;
-}
-
-.skills-group h3 {
-    margin: 0 0 12px;
-}
-
-.skills-group ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skills-group li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-
-/* !important is only here to beat the inline style="width: 45%" in the HTML.
-   If you delete those inline styles, you can remove it. */
-.skills-group img {
-    width: 32px !important;
-    height: 32px;
-    object-fit: contain;
+    min-width: 0;
 }
 
 /* ---------- Projects ---------- */
@@ -274,6 +252,17 @@ img {
 @media (hover: hover) {
     .footer-contact a:hover {
         color: #d4a73c;
+    }
+}
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills {
+        grid-template-columns: 1fr;
     }
 }
 
