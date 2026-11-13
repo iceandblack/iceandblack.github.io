@@ -1,5 +1,6 @@
+/* ---------- Page ---------- */
 body {
-      margin: 0;
+    margin: 0;
     background: radial-gradient(ellipse at bottom, #1b2f7a 0%, #010d35 70%);
     background-attachment: fixed;
     min-height: 100vh;
@@ -7,57 +8,47 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: transparent;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-
 }
 
 .logo img {
     height: 60px;
-    width: 100px;
+    width: auto;
     filter: brightness(1.6);
-}
-
-.site-header {
-    background-color: #041036;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    background: transparent;
 }
 
 .nav-links {
     display: flex;
     gap: 32px;
-    list-style: none;
     margin-left: auto;
-    color: #495b96;
 }
+
 .nav-links a {
     color: #acbdf3;
     text-decoration: none;
 }
 
+/* ---------- Hero ---------- */
 .hero {
     position: relative;
     height: 400px;
-    background: radial-gradient(ellipse at bottom, #1b2f7a 0%, #010d35 70%);
     overflow: hidden;
-}
-
-.hero-text {
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: center;
-    padding: 0 8vw;
-    z-index: 2;
-    color: #acabab;
 }
 
 .hero canvas {
@@ -68,66 +59,37 @@ body {
     height: 100%;
 }
 
-.about {
-    padding: 60px 8vw;
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.About h1 {
-    font-size: 5px;
-}
-
-.skills div {
-    display: grid;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.skills-group {
-    display: grip;
-}
-
-.projects {
-    display: contents;
-}
-
-.slideshow {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 9;
-    margin: 40px auto;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.slide {
+.hero-text {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-footer {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 8vw;
+    z-index: 2;
     color: #d4cfcf;
-    height: 40px;
 }
-.site-footer {
-  color: #d4cfcf;
-  padding: 48px 24px 24px;
-  gap: opx;
+
+.hero-text h1 {
+    font-size: clamp(1.4rem, 4vw, 2.6rem);
+}
+
+/* ---------- About ---------- */
+.about {
+    padding: 60px 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.about p {
+    max-width: 800px;
 }
 
 .slideshow2 {
@@ -135,7 +97,7 @@ footer {
     width: 100%;
     max-width: 700px;
     aspect-ratio: 16 / 9;
-    margin: 40px auto;
+    margin: 20px auto;
     border-radius: 14px;
     overflow: hidden;
 }
@@ -167,7 +129,7 @@ footer {
     right: 0;
     bottom: 0;
     padding: 40px 24px 24px;
-    color: #afadad;
+    color: #d4cfcf;
     font-size: 1.3rem;
     text-align: center;
     background: linear-gradient(to top, rgba(1, 13, 53, 0.85), rgba(1, 13, 53, 0));
@@ -181,40 +143,158 @@ footer {
     opacity: 1;
 }
 
-.footer-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+/* ---------- Skills ---------- */
+.skills {
+    padding: 60px 8vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
 }
 
-.footer-brand { display: flex; align-items: center; gap: 10px; }
-.footer-logo { height: 32px; width: auto; }
-.footer-brand p { color: #FFFFFF; font-weight: 600; font-size: 1.1rem; }
+.skills h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
 
-.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-.footer-links a { color: #C9CFDB; font-size: 0.95rem; transition: color 0.2s ease; }
-.footer-links a:hover { color: #D4A73C; }
+.skills-group {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 24px;
+}
 
-.footer-contact p { margin: 4px 0; }
-.footer-contact a { color: #C9CFDB; }
-.footer-contact a:hover { color: #D4A73C; }
+.skills-group h3 {
+    margin: 0 0 12px;
+}
 
-.site-footer img {
-    width: 60px;
+.skills-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-group li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* !important is only here to beat the inline style="width: 45%" in the HTML.
+   If you delete those inline styles, you can remove it. */
+.skills-group img {
+    width: 32px !important;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* ---------- Projects ---------- */
+.projects {
+    padding: 60px 8vw;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    margin: 40px auto;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    color: #d4cfcf;
+    padding: 48px 24px 24px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
     height: 46px;
+    width: auto;
+}
+
+.footer-brand p {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footer-contact p {
+    margin: 4px 0;
+}
+
+.footer-contact a {
+    color: #c9cfdb;
+    text-decoration: none;
 }
 
 .footer-bottom {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-top: 20px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #c0c0be;
-  background: radial-gradient( #1b2f7a 0%, #010d35 70%);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #c0c0be;
+}
+
+/* hover effects only where a mouse exists, so phones don't get stuck states */
+@media (hover: hover) {
+    .footer-contact a:hover {
+        color: #d4a73c;
+    }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 44px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+
+    .about,
+    .skills,
+    .projects {
+        padding: 40px 6vw;
+    }
 }
