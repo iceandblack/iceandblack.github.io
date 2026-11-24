@@ -34,7 +34,7 @@ img {
 .logo img {
     height: 60px;
     width: auto;
-    filter: brightness(1.6);
+    filter: brightness(2.0);
 }
 
 .nav-links {
@@ -53,7 +53,7 @@ img {
 
 .hero {
     position: relative;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     isolation: isolate;
 }
@@ -63,15 +63,16 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     display: block;
     z-index: 0;
     pointer-events: none;
 }
 
 .hero-text {
-    position: absolute;
+    position: relative;
     top: 0;
+    font-size: x-large;
     left: 10%;
     width: 100%;
     height: 100%;
@@ -94,20 +95,16 @@ img {
 
 .about p {
     max-width: 800px;
+  font-size: 36px;
 }
 
 .aboutpics {
     padding: 60px 8vw;
     display: flex;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14%;
+    gap: 10%;
     width: 100%;
     box-sizing: border-box;
-}
-
-.profile-image {
-    width: 50px;
-    border-radius: 30%;
 }
 
 /* ---------- Skills ---------- */
@@ -136,12 +133,12 @@ img {
 
 .video-wrap {
     position: relative;
-    width: 100%;
-    left: 25%;
+    width: 90%;
+    left: 5%;
     max-width: 700px;
     aspect-ratio: 16 / 9;
     margin: 20px auto;
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
     background: #000;
 }
