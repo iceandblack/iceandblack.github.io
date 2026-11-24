@@ -81,16 +81,16 @@ function showNextSlide() {
 setInterval(showNextSlide, 3000);
 
 
-const slides2 = document.querySelectorAll(".slide2");
-let current2 = 0;
+const slydes = document.querySelectorAll(".slidy .slyde");
+let slydeIndex = 0;
 
-function showNextSlide2() {
-    slides2[current2].classList.remove("active2");
-    current2 = (current2 + 1) % slides2.length;
-    slides2[current2].classList.add("active2");
+if (slydes.length > 1) {
+    setInterval(function () {
+        slydes[slydeIndex].classList.remove("active");
+        slydeIndex = (slydeIndex + 1) % slydes.length;
+        slydes[slydeIndex].classList.add("active");
+    }, 4000);
 }
-
-setInterval(showNextSlide2, 5000);
 
 
 
