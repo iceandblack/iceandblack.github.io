@@ -213,7 +213,7 @@ li::marker {
 
 .hero {
     position: relative;
-    height: 500px;
+    height: 510px;
     overflow: hidden;
 }
 
@@ -238,7 +238,7 @@ li::marker {
     top: 0;
     left: 0;
     width: 100%;
-    height: 115%;
+    height: 100%;
 }
 
 
