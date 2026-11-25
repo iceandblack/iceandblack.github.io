@@ -541,3 +541,192 @@ footer {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* ==========================================
+   BLACKICE TECH - TEXT ANIMATION SYSTEM
+   ========================================== */
+
+
+/* 1. H1 - NEON GLOW */
+
+h1 {
+    animation: neonGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #367cff,
+            0 0 20px #367cff;
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 25px #367cff,
+            0 0 45px #164bff;
+    }
+}
+
+
+/* 2. H2 - WAVE MOVEMENT */
+
+h2 {
+    animation: headingWave 3s ease-in-out infinite;
+}
+
+@keyframes headingWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-6px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(6px);
+    }
+}
+
+
+/* 3. H4 - GLITCH */
+
+h4:hover {
+    animation: glitchMove 0.25s infinite;
+}
+
+@keyframes glitchMove {
+    0%, 100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(-3px, 2px);
+    }
+
+    50% {
+        transform: translate(3px, -2px);
+    }
+
+    75% {
+        transform: translate(-2px, 1px);
+    }
+}
+
+
+/* 4. P - FLOATING TEXT */
+
+p {
+    animation: floatingText 4s ease-in-out infinite;
+}
+
+@keyframes floatingText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* 5. SPAN - COLOR SHIFTING */
+
+span {
+    animation: colorShift 5s linear infinite;
+}
+
+@keyframes colorShift {
+    0% {
+        color: #ffffff;
+    }
+
+    25% {
+        color: #00aaff;
+    }
+
+    50% {
+        color: #9b59ff;
+    }
+
+    75% {
+        color: #00ffff;
+    }
+
+    100% {
+        color: #ffffff;
+    }
+}
+
+
+/* 6. H6 - TYPEWRITER EFFECT */
+
+h6 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #4f80ff;
+
+    animation:
+        typingEffect 4s steps(25, end) both,
+        cursorBlink 0.7s step-end infinite;
+}
+
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursorBlink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* 7. I - ROTATING / DANCING TEXT */
+
+i {
+    display: inline-block;
+    animation: iconDance 2s ease-in-out infinite;
+}
+
+@keyframes iconDance {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(8deg) translateY(-4px);
+    }
+
+    50% {
+        transform: rotate(0deg) translateY(-7px);
+    }
+
+    75% {
+        transform: rotate(-8deg) translateY(-4px);
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    h1, h2, h4, p, span, h6, i {
+        animation: none !important;
+    }
+}
+
