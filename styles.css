@@ -1,5 +1,11 @@
 
-/* ---------- Page ---------- */
+
+
+
+/* ==========================================================
+   1. PAGE
+   ========================================================== */
+
 body {
     background: radial-gradient(ellipse at bottom, #1b2f7a 0%, #010d35 70%);
     background-attachment: fixed;
@@ -12,6 +18,12 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+
+/* ==========================================================
+   2. TYPOGRAPHY
+   ========================================================== */
+
+/* ---------- Headings (shared) ---------- */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
@@ -64,7 +76,7 @@ h5, h6 {
     color: #6379d8;
 }
 
-/* PARAGRAPHS */
+/* ---------- Paragraphs ---------- */
 
 p {
     font-family: 'Inter', sans-serif;
@@ -76,23 +88,21 @@ p {
     max-width: 750px;
 }
 
-
+/* ---------- Strong and emphasized text ---------- */
 
 /* STRONG TEXT */
 
 strong, b {
     font-weight: 700;
-    
 }
 
 /* EMPHASIZED TEXT */
 
 em, i {
     color: #a615c4ea;
-
 }
 
-/* LINKS */
+/* ---------- Links ---------- */
 
 a {
     color: #57045f;
@@ -106,6 +116,8 @@ a:hover {
     color: #f77171;
     text-shadow: 0 0 12px rgba(100, 145, 255, 0.5);
 }
+
+/* ---------- Buttons ---------- */
 
 button, .btn {
     font-family: 'Inter', sans-serif;
@@ -122,7 +134,7 @@ button:hover, .btn:hover {
     letter-spacing: 1.5px;
 }
 
-/* LABELS AND SMALL TITLES */
+/* ---------- Labels and small titles ---------- */
 
 label, .label, .subtitle {
     font-family: 'Inter', sans-serif;
@@ -133,10 +145,10 @@ label, .label, .subtitle {
     color: #829fff;
 }
 
-/* LISTS */
+/* ---------- Lists ---------- */
 
 ul, ol {
-    color: #b2e293;
+    color: #a74f89;
     padding-left: 25px;
     line-height: 2;
 }
@@ -147,21 +159,14 @@ li {
     margin-bottom: 7px;
 }
 
-
-img {
-    max-width: 100%;
+li::marker {
+    color: #7295ff;
 }
 
 
-/* ---------- Header ---------- */
-
-.site-header {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    background: transparent;
-}
+/* ==========================================================
+   3. HEADER AND NAVIGATION
+   ========================================================== */
 
 .logo {
     display: flex;
@@ -175,6 +180,14 @@ img {
     filter: brightness(2.0);
 }
 
+.site-header {
+    background-color: #020b29;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
 .nav-links {
     display: flex;
     gap: 32px;
@@ -182,6 +195,7 @@ img {
     margin-left: auto;
     color: #495b96;
 }
+
 .nav-links a {
     color: #acbdf3;
     text-decoration: none;
@@ -193,13 +207,30 @@ img {
 }
 
 
-/* ---------- Hero ---------- */
+/* ==========================================================
+   4. HERO
+   ========================================================== */
 
 .hero {
     position: relative;
     height: 500px;
     overflow: hidden;
-    isolation: isolate;
+}
+
+.hero-text {
+    position: relative;
+    top: 0;
+    font-size: x-large;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 8vw;
+    z-index: 2;
+    color: #acabab;
 }
 
 .hero canvas {
@@ -208,33 +239,20 @@ img {
     left: 0;
     width: 100%;
     height: 110%;
-    display: block;
-    z-index: 0;
-    pointer-events: none;
 }
 
-.hero-text {
-    position: relative;
-    top: 0;
-    font-size: x-large;
-    left: 10%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: center;
-    padding: 0 8vw;
-    z-index: 2;
-    color: #acabab;
-}
 
-/* ---------- About ---------- */
+/* ==========================================================
+   5. ABOUT
+   ========================================================== */
 
 .about {
     padding: 60px 8vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .about p {
@@ -251,17 +269,23 @@ img {
     box-sizing: border-box;
 }
 
-/* ---------- Skills ---------- */
+
+/* ==========================================================
+   6. SKILLS
+   ========================================================== */
 
 .skills {
     padding: 60px 8vw;
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     width: 100%;
     box-sizing: border-box;
 }
 
+.skills > :not(.skills-group) {
+    grid-column: 1 / -1;
+}
 
 .skills-group {
     background: rgba(255, 255, 255, 0.05);
@@ -271,29 +295,47 @@ img {
     min-width: 0;
 }
 
+.skills-group img {
+    display: block;
+    width: 100% !important;
+    max-width: 220px;
+    height: auto;
+    border-radius: 10px;
+    margin: 8px 0 20px;
+}
+
+
+/* ==========================================================
+   7. VIDEO
+   ========================================================== */
+
 .video-wrap {
     position: relative;
     width: 60%;
     left: 2%;
-    height: 700px;
+    height: 750px;
     margin: 20px auto;
     border-radius: 14px;
-    overflow: hidden;
     background:transparent;
 }
 
 .video-wrap video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
-/* ---------- Projects ---------- */
+
+
+/* ==========================================================
+   8. PROJECTS AND SLIDESHOWS
+   ========================================================== */
 
 .projects {
-    display: contents;
-    height: 1000px;
+    padding: 60px 8vw;
 }
+
+/* ---------- Slideshow: website screenshots (.slideshow / .slide) ---------- */
 
 .slideshow {
     position: relative;
@@ -320,6 +362,7 @@ img {
     opacity: 1;
 }
 
+/* ---------- Slideshow: two pictures (.slidy / .slyde) ---------- */
 
 .slidy {
     position: relative;
@@ -350,11 +393,21 @@ img {
     z-index: 2;
     transition-delay: 0s;
 }
-/* ---------- Footer ---------- */
+
+
+/* ==========================================================
+   9. FOOTER
+   ========================================================== */
+
+footer {
+    color: #d4cfcf;
+    height: 40px;
+}
 
 .site-footer {
     color: #d4cfcf;
     padding: 48px 24px 24px;
+    gap: 0px;
 }
 
 .footer-content {
@@ -365,33 +418,32 @@ img {
     justify-content: space-between;
     gap: 32px;
     padding-bottom: 32px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+/* ---------- Footer brand ---------- */
 
-.footer-logo {
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-logo { height: 32px; width: auto; }
+.footer-brand p { color: #FFFFFF; font-weight: 600; font-size: 1.1rem; }
+
+/* ---------- Footer links ---------- */
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: #C9CFDB; font-size: 0.95rem; transition: color 0.2s ease; }
+.footer-links a:hover { color: #D4A73C; }
+
+/* ---------- Footer contact ---------- */
+
+.footer-contact p { margin: 4px 0; }
+.footer-contact a { color: #C9CFDB; }
+.footer-contact a:hover { color: #D4A73C; }
+
+/* ---------- Footer images and bottom bar ---------- */
+
+.site-footer img {
+    width: 60px;
     height: 46px;
-    width: auto;
-}
-
-.footer-brand p {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.footer-contact p {
-    margin: 4px 0;
-}
-
-.footer-contact a {
-    color: #c9cfdb;
-    text-decoration: none;
 }
 
 .footer-bottom {
@@ -404,24 +456,31 @@ img {
 }
 
 
+/* ==========================================================
+   10. RESPONSIVE
+   ========================================================== */
+
 /* ---------- Small screens ---------- */
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
     .skills {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* ---------- Phones ---------- */
 
 @media (max-width: 600px) {
     .site-header {
         padding: 0 12px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 70px;
     }
 
     .logo img {
         height: 44px;
+        width: auto;
     }
 
     .nav-links {
@@ -429,7 +488,15 @@ img {
         font-size: 0.85rem;
     }
 
-    .about,
+    .aboutpics {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
     .skills,
     .projects {
         padding: 40px 6vw;
@@ -439,7 +506,8 @@ img {
 @media (max-width: 600px) {
     .video-wrap {
         width: 100%;
-        height: 260px;
+        left: 0;
+        height: 70vh;
     }
 }
 
@@ -459,7 +527,12 @@ img {
     }
 }
 
-/* ACCESSIBILITY: RESPECT REDUCED MOTION */
+
+/* ==========================================================
+   11. ACCESSIBILITY
+   ========================================================== */
+
+/* RESPECT REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
